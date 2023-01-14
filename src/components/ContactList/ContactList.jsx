@@ -6,13 +6,13 @@ import {
   ContactItem,
 } from './ContactList.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts, selectFilters } from 'redux/auth/selectors';
-import { deleteContact } from 'redux/auth/operations';
+import { selectAllContacts, selectFilter } from 'redux/contacts/selectors';
+import { deleteContact } from 'redux/contacts/operations';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
-  const contactsList = useSelector(selectContacts);
-  const filterName = useSelector(selectFilters);
+  const contactsList = useSelector(selectAllContacts);
+  const filterName = useSelector(selectFilter);
 
   const filteredContacts = contactsList.filter(contact =>
     contact.name.toLowerCase().includes(filterName.toLowerCase())

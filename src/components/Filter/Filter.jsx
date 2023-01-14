@@ -1,7 +1,6 @@
 import { FilterInput } from './Filter.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { setContactsFilter } from 'redux/filterSlice';
-import { selectFilters } from 'redux/auth/selectors';
+import { selectAllContacts, selectFilters } from 'redux/contacts/selectors';
 
 export const Filter = () => {
   const dispatch = useDispatch();
@@ -9,7 +8,7 @@ export const Filter = () => {
 
   const handleFilter = event => {
     const value = event.target.value.toLowerCase();
-    dispatch(setContactsFilter(value));
+    dispatch(selectAllContacts(value));
   };
 
   return (

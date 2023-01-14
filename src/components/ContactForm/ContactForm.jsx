@@ -2,15 +2,15 @@ import { nanoid } from '@reduxjs/toolkit';
 import toast from 'react-hot-toast';
 import { useState } from 'react';
 import { Form, FormInput, ButtonAddContact } from './ContactForm.styled';
-import { selectContacts } from 'redux/auth/selectors';
+import { selectAllContacts } from 'redux/contacts/selectors';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/auth/operations';
+import { addContact } from 'redux/contacts/operations';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const dispatch = useDispatch();
-  const contactList = useSelector(selectContacts);
+  const contactList = useSelector(selectAllContacts);
 
   const handleChange = event => {
     const { name, value } = event.target;
