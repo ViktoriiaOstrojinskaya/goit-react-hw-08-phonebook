@@ -2,9 +2,9 @@ import { nanoid } from '@reduxjs/toolkit';
 import toast from 'react-hot-toast';
 import { useState } from 'react';
 import { Form, FormInput, ButtonAddContact } from './ContactForm.styled';
-import { selectContacts } from 'redux/selectors';
+import { selectContacts } from 'redux/auth/selectors';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/operations';
+import { addContact } from 'redux/auth/operations';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
