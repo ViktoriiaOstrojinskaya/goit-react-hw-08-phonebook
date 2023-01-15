@@ -66,8 +66,8 @@ export default function App() {
             }
           />
         </Route>
+        <Toaster />
       </Routes>
-      <Toaster />
     </Box>
   );
 }
