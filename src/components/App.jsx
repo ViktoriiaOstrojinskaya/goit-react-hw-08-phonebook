@@ -17,7 +17,7 @@ import { useEffect } from 'react';
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import SharedLayout from './SharedLayout/SharedLayout';
-import { useAuth } from 'hooks/useAuth';
+import { useAuth } from 'hooks';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 
@@ -66,8 +66,8 @@ export default function App() {
             }
           />
         </Route>
-        <Toaster />
       </Routes>
+      <Toaster />
     </Box>
   );
 }
