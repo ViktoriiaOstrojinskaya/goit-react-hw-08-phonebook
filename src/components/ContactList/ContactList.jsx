@@ -1,5 +1,4 @@
 import {
-  List,
   ListItem,
   ListTitle,
   ButtonDelete,
@@ -19,11 +18,17 @@ export const ContactList = () => {
   );
 
   return (
-    <List>
+    <ul>
       <ListTitle>
-        {filteredContacts.length === 0
-          ? 'We didn`t find contacts your request 😭'
-          : `You have ${filteredContacts.length} contacts`}
+        {filteredContacts.length === 0 ? (
+          <p style={{ marginTop: '30px', color: '#0b4779' }}>
+            We didn`t find contacts your request 😭
+          </p>
+        ) : (
+          <p style={{ marginTop: '30px', color: 'rgb(145 37 0)' }}>
+            {`You have ${filteredContacts.length} contacts`}
+          </p>
+        )}
       </ListTitle>
       {filteredContacts.map(({ id, name, number }) => (
         <ListItem key={id}>
@@ -38,6 +43,6 @@ export const ContactList = () => {
           </ButtonDelete>
         </ListItem>
       ))}
-    </List>
+    </ul>
   );
 };

@@ -1,19 +1,18 @@
 import styled from '@emotion/styled';
 
 export const Form = styled.form`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  width: 320px;
+  margin: 0 auto;
+  padding-top: ${p => p.theme.space[5]}px;
 `;
 
 export const FormInput = styled.input`
-  width: auto;
-  height: 25px;
-  margin-left: ${p => p.theme.space[3]}px;
+  width: 100%;
+  height: 30px;
   border-radius: ${p => p.theme.radii.normal};
   border: ${p => `${p.theme.borders.normal} ${p.theme.colors.steelBlue}`};
   background-color: ${p => p.theme.colors.snow};
-  color: ${p => p.theme.colors.darkBlue};
+  color: ${p => p.theme.colors.royalBlue};
 
   &:focus {
     outline: transparent;
@@ -21,12 +20,15 @@ export const FormInput = styled.input`
 `;
 
 export const FormLabel = styled.label`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: ${p => p.theme.space[4]}px;
   color: ${p => p.theme.colors.darkBlue};
 `;
 
-export const ButtonAddContact = styled.button`
-  width: 85px;
-  height: auto;
+export const ButtonLogin = styled.button`
+  width: 100%;
+  padding: ${p => p.theme.space[3]}px;
 
   font-size: ${p => p.theme.fontSizes.xs};
   border-radius: ${p => p.theme.radii.normal};

@@ -18,13 +18,14 @@ import { refreshUser } from 'redux/auth/operations';
 import { useAuth } from 'hooks';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
+import { Loader } from './Loader/Loader';
 
-const Home = lazy(() => import('../pages/Home'));
+const Home = lazy(() => import('../pages/Home/Home'));
 const Login = lazy(() => import('../pages/Login'));
 const Register = lazy(() => import('../pages/Register'));
 const Contacts = lazy(() => import('../pages/Contacts'));
 
-export const App=()=> {
+export const App = () => {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
   // const contactsList = useSelector(selectContacts);
@@ -36,7 +37,7 @@ export const App=()=> {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <b>Refreshing user...</b>
+    <Loader />
   ) : (
     <Box>
       <Routes>
@@ -67,17 +68,13 @@ export const App=()=> {
       </Routes>
     </Box>
   );
-}
+};
 
 /* <Title title="Phonebook" />
       <ContactForm />
       <Title title="Contacts" />
-      {contactsList.length > 0 && <Filter />}
-      {contactsList.length === 0 ? (
-        <p>Your contacts are empty, let`s create them 🚀</p>
-      ) : (
-        <ContactList />
-      )}
+      
+      
 
       {isLoading && !error && <Loader />}
       <Toaster /> */

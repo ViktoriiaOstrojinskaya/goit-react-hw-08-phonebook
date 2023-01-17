@@ -7,6 +7,7 @@ export const theme = {
     steelBlue: '#B0C4DE',
     snow: '#FFFAFA',
     royalBlue: '#4682B4',
+    darkBlue: '#0b4779',
   },
 
   space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
@@ -39,6 +40,7 @@ export const theme = {
   borders: {
     none: 'none',
     normal: '1px solid',
+    bigSize: '3px solid',
   },
 
   radii: {

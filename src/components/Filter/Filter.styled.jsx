@@ -1,5 +1,13 @@
 import styled from '@emotion/styled';
 
+export const FilterForm = styled.form`
+  margin-top: ${p => p.theme.space[5]}px;
+`;
+
+export const FilterLabel = styled.label`
+  color: ${p => p.theme.colors.darkBlue};
+`;
+
 export const FilterInput = styled.input`
   width: auto;
   height: 25px;

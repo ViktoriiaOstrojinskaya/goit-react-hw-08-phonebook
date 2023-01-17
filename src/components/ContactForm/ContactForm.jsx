@@ -1,7 +1,12 @@
 import { nanoid } from '@reduxjs/toolkit';
 import toast from 'react-hot-toast';
 import { useState } from 'react';
-import { Form, FormInput, ButtonAddContact } from './ContactForm.styled';
+import {
+  Form,
+  FormInput,
+  ButtonAddContact,
+  FormLabel,
+} from './ContactForm.styled';
 import { selectAllContacts } from 'redux/contacts/selectors';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
@@ -55,7 +60,7 @@ export const ContactForm = () => {
 
   return (
     <Form onSubmit={handleSubmit} autoComplete="off">
-      <label>
+      <FormLabel>
         Name
         <FormInput
           type="text"
@@ -66,9 +71,9 @@ export const ContactForm = () => {
           value={name}
           onChange={handleChange}
         />
-      </label>
+      </FormLabel>
 
-      <label>
+      <FormLabel>
         Number
         <FormInput
           type="tel"
@@ -79,7 +84,7 @@ export const ContactForm = () => {
           value={number}
           onChange={handleChange}
         />
-      </label>
+      </FormLabel>
       <ButtonAddContact type="submit">Add contact</ButtonAddContact>
     </Form>
   );

@@ -1,4 +1,4 @@
-import { FilterInput } from './Filter.styled';
+import { FilterInput, FilterLabel, FilterForm } from './Filter.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAllContacts, selectFilter } from 'redux/contacts/selectors';
 
@@ -12,9 +12,11 @@ export const Filter = () => {
   };
 
   return (
-    <label>
-      Find contacts by name
-      <FilterInput type="text" value={input} onChange={handleFilter} />
-    </label>
+    <FilterForm>
+      <FilterLabel>
+        Find contacts by name
+        <FilterInput type="text" value={input} onChange={handleFilter} />
+      </FilterLabel>
+    </FilterForm>
   );
 };

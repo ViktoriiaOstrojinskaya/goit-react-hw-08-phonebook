@@ -5,7 +5,7 @@ export default function Register() {
   return (
     <div>
       <Helmet>
-        <h1>Register</h1>
+        <title>Register</title>
       </Helmet>
       <RegisterForm />
     </div>
