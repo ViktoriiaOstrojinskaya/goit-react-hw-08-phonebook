@@ -10,15 +10,17 @@ export const Form = styled.form`
 export const FormInput = styled.input`
   width: auto;
   height: 25px;
-  padding-left: ${p => p.theme.space[3]}px;
+  text-align: center;
   margin-left: ${p => p.theme.space[3]}px;
   border-radius: ${p => p.theme.radii.normal};
   border: ${p => `${p.theme.borders.normal} ${p.theme.colors.steelBlue}`};
   background-color: ${p => p.theme.colors.snow};
   color: ${p => p.theme.colors.darkBlue};
+  cursor: pointer;
 
   &:focus {
     outline: transparent;
+    border: ${p => `${p.theme.borders.bigSize} ${p.theme.colors.steelBlue}`};
   }
 `;
 
@@ -29,7 +31,7 @@ export const FormLabel = styled.label`
 export const ButtonAddContact = styled.button`
   width: 85px;
   height: auto;
-
+  cursor: pointer;
   font-size: ${p => p.theme.fontSizes.xs};
   border-radius: ${p => p.theme.radii.normal};
   border: ${p => p.theme.borders.none};

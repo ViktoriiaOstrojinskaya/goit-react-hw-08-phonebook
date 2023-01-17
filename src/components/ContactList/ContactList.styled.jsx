@@ -32,6 +32,7 @@ export const ButtonDelete = styled.button`
   border: ${p => p.theme.borders.none};
   background-color: ${p => p.theme.colors.steelBlue};
   color: ${p => p.theme.colors.royalBlue};
+  cursor: pointer;
 
   &:hover,
   &:focus {

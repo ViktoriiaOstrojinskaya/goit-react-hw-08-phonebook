@@ -14,13 +14,15 @@ export const FilterLabel = styled.label`
 export const FilterInput = styled.input`
   width: auto;
   height: 25px;
-  padding-left: ${p => p.theme.space[3]}px;
+  text-align: center;
   border-radius: ${p => p.theme.radii.normal};
   border: ${p => `${p.theme.borders.normal} ${p.theme.colors.steelBlue}`};
   margin-left: ${p => p.theme.space[4]}px;
   background-color: ${p => p.theme.colors.snow};
+  cursor: pointer;
 
   &:focus {
     outline: transparent;
+    border: ${p => `${p.theme.borders.bigSize} ${p.theme.colors.steelBlue}`};
   }
 `;
