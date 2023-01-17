@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const ListTitle = styled.p`
-  margin-top: ${p => p.theme.space[5]}px;
+  margin-top: ${p => p.theme.space[6]}px;
 `;
 
 export const ContactItem = styled.p`
@@ -15,8 +15,13 @@ export const ListItem = styled.li`
   justify-content: space-between;
   font-size: ${p => p.theme.fontSizes.s};
   padding: ${p => p.theme.space[3]}px;
-  border-bottom: ${p =>
-    `${p.theme.borders.normal} ${p.theme.colors.steelBlue}`};
+  margin-bottom: ${p => p.theme.space[3]}px;
+  border-radius: ${p => p.theme.radii.normal};
+  border: ${p => `${p.theme.borders.normal} ${p.theme.colors.steelBlue}`};
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 `;
 
 export const ButtonDelete = styled.button`

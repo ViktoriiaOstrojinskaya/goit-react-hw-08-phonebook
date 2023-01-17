@@ -1,6 +1,9 @@
 import styled from '@emotion/styled';
 
 export const FilterForm = styled.form`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: ${p => p.theme.space[5]}px;
 `;
 

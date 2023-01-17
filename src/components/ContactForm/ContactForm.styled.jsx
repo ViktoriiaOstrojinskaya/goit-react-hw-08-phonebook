@@ -2,8 +2,9 @@ import styled from '@emotion/styled';
 
 export const Form = styled.form`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
+  max-width: 100%;
 `;
 
 export const FormInput = styled.input`
