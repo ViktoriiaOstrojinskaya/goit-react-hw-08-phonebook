@@ -11,6 +11,7 @@ export const FilterLabel = styled.label`
 export const FilterInput = styled.input`
   width: auto;
   height: 25px;
+  padding-left: ${p => p.theme.space[3]}px;
   border-radius: ${p => p.theme.radii.normal};
   border: ${p => `${p.theme.borders.normal} ${p.theme.colors.steelBlue}`};
   margin-left: ${p => p.theme.space[4]}px;

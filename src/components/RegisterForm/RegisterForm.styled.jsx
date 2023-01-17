@@ -9,6 +9,7 @@ export const Form = styled.form`
 export const FormInput = styled.input`
   width: 100%;
   height: 30px;
+  padding-left: ${p => p.theme.space[3]}px;
   border-radius: ${p => p.theme.radii.normal};
   border: ${p => `${p.theme.borders.normal} ${p.theme.colors.steelBlue}`};
   background-color: ${p => p.theme.colors.snow};

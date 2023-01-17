@@ -5,17 +5,12 @@ import {
   ContactItem,
 } from './ContactList.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectAllContacts, selectFilter } from 'redux/contacts/selectors';
+import { selectFilteredContacts } from 'redux/contacts/selectors';
 import { deleteContact } from 'redux/contacts/operations';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
-  const contactsList = useSelector(selectAllContacts);
-  const filterName = useSelector(selectFilter);
-
-  const filteredContacts = contactsList.filter(contact =>
-    contact.name.toLowerCase().includes(filterName.toLowerCase())
-  );
+  const filteredContacts = useSelector(selectFilteredContacts);
 
   return (
     <ul>

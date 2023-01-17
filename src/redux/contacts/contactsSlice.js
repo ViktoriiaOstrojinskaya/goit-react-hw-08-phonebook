@@ -1,4 +1,3 @@
-import { toast } from 'react-hot-toast';
 import { createSlice } from '@reduxjs/toolkit';
 import { logOut } from 'redux/auth/operations';
 import { fetchContacts, addContact, deleteContact } from './operations';
@@ -33,7 +32,6 @@ export const contactsSlice = createSlice({
       state.isLoading = false;
       state.error = null;
       state.items.push(action.payload);
-      toast.success(`Contact added 📂`);
     },
     [addContact.rejected]: handleRejected,
 
@@ -45,7 +43,6 @@ export const contactsSlice = createSlice({
         item => item.id === action.payload.id
       );
       state.items.splice(index, 1);
-      toast.success(`Contact deleted 🗑`);
     },
     [deleteContact.rejected]: handleRejected,
     [logOut.fulfilled](state) {

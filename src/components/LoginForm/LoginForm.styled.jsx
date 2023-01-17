@@ -7,6 +7,7 @@ export const Form = styled.form`
 `;
 
 export const FormInput = styled.input`
+  padding-left: ${p => p.theme.space[3]}px;
   width: 100%;
   height: 30px;
   border-radius: ${p => p.theme.radii.normal};

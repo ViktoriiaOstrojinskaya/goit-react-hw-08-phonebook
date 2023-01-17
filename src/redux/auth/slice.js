@@ -1,4 +1,3 @@
-import { toast } from 'react-hot-toast';
 import { createSlice } from '@reduxjs/toolkit';
 import { register, logIn, logOut, refreshUser } from './operations';
 
@@ -22,13 +21,11 @@ const authSlice = createSlice({
       state.user = action.payload.user;
       state.token = action.payload.token;
       state.isLoggedIn = true;
-      toast.success(`Login successfully 🥳`);
     },
     [logOut.fulfilled](state) {
       state.user = { name: null, email: null };
       state.token = null;
       state.isLoggedIn = false;
-      toast.success(`Exit completed, see you soon 😴`);
     },
     [refreshUser.pending](state) {
       state.isRefreshing = true;
