@@ -1,4 +1,3 @@
-import { Toaster } from 'react-hot-toast';
 import React from 'react';
 //import { ContactForm } from './ContactForm/ContactForm';
 //import { Filter } from './Filter/Filter';
@@ -6,25 +5,24 @@ import React from 'react';
 //import { Title } from './Title/Title';
 import { Box } from './App.styled';
 //import { Loader } from './Loader/Loader';
-import { fetchContacts } from 'redux/contacts/operations';
 import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, lazy } from 'react';
 // import {
 //   selectIsLoading,
 //   selectError,
 //   selectContacts,
 // } from 'redux/auth/selectors';
-import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import SharedLayout from './SharedLayout/SharedLayout';
+import { refreshUser } from 'redux/auth/operations';
 import { useAuth } from 'hooks';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 
-const Home = lazy(() => import('pages/Home'));
-const Login = lazy(() => import('pages/Login'));
-const Register = lazy(() => import('pages/Register'));
-const Contacts = lazy(() => import('pages/Contacts'));
+const Home = lazy(() => import('../pages/Home'));
+const Login = lazy(() => import('../pages/Login'));
+const Register = lazy(() => import('../pages/Register'));
+const Contacts = lazy(() => import('../pages/Contacts'));
 
 export default function App() {
   const dispatch = useDispatch();
@@ -34,7 +32,7 @@ export default function App() {
   // const error = useSelector(selectError);
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(refreshUser());
   }, [dispatch]);
 
   return isRefreshing ? (
@@ -45,18 +43,18 @@ export default function App() {
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
           <Route
-            path="/login"
-            element={
-              <RestrictedRoute redirectTo="/contacts" component={<Login />} />
-            }
-          />
-          <Route
             path="/register"
             element={
               <RestrictedRoute
                 redirectTo="/contacts"
                 component={<Register />}
               />
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <RestrictedRoute redirectTo="/contacts" component={<Login />} />
             }
           />
           <Route
@@ -67,7 +65,6 @@ export default function App() {
           />
         </Route>
       </Routes>
-      <Toaster />
     </Box>
   );
 }

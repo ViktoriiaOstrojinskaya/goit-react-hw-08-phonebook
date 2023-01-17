@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { AppBar } from 'components/AppBar/AppBar';
+import { Toaster } from 'react-hot-toast';
 
 const SharedLayout = () => {
   return (
@@ -9,6 +10,7 @@ const SharedLayout = () => {
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>
+      <Toaster />
     </div>
   );
 };
