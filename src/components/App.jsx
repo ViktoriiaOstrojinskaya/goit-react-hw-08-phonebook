@@ -24,7 +24,7 @@ const Login = lazy(() => import('../pages/Login'));
 const Register = lazy(() => import('../pages/Register'));
 const Contacts = lazy(() => import('../pages/Contacts'));
 
-export default function App() {
+export const App=()=> {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
   // const contactsList = useSelector(selectContacts);
