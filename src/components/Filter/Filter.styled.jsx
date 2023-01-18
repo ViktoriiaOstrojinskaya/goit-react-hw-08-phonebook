@@ -19,6 +19,8 @@ export const FilterInput = styled.input`
   border: ${p => `${p.theme.borders.normal} ${p.theme.colors.steelBlue}`};
   margin-left: ${p => p.theme.space[4]}px;
   background-color: ${p => p.theme.colors.snow};
+  color: ${p => p.theme.colors.darkBlue};
+
   cursor: pointer;
 
   &:focus {
