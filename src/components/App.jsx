@@ -56,12 +56,3 @@ export const App = () => {
     </Box>
   );
 };
-
-/* <Title title="Phonebook" />
-      <ContactForm />
-      <Title title="Contacts" />
-      
-      
-
-      {isLoading && !error && <Loader />}
-      <Toaster /> */

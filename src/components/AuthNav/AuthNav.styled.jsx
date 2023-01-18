@@ -10,8 +10,7 @@ export const StyledLink = styled(NavLink)`
   background-color: ${p => p.theme.colors.steelBlue};
   color: ${p => p.theme.colors.royalBlue};
 
-  &:hover,
-  &:focus {
+  &.active {
     background-color: ${p => p.theme.colors.royalBlue};
     color: ${p => p.theme.colors.white};
   }

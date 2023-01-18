@@ -33,6 +33,7 @@ export const ButtonDelete = styled.button`
   background-color: ${p => p.theme.colors.steelBlue};
   color: ${p => p.theme.colors.royalBlue};
   cursor: pointer;
+  transition: all 0.25s;
 
   &:hover,
   &:focus {

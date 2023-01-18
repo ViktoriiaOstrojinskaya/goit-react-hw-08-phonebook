@@ -22,5 +22,3 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </ThemeProvider>
   </React.StrictMode>
 );
-
-//  basename = '/goit-react-hw-8-phonebook';

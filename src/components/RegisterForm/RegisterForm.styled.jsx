@@ -39,6 +39,7 @@ export const ButtonRegister = styled.button`
   border: ${p => p.theme.borders.none};
   background-color: ${p => p.theme.colors.steelBlue};
   color: ${p => p.theme.colors.royalBlue};
+  transition: all 0.25s;
 
   &:hover,
   &:focus {
